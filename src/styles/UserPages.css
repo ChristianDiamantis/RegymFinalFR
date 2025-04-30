@@ -1,0 +1,761 @@
+/* ===== AllListings & MyListings ===== */
+.view-listings-wrapper {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .view-listings-wrapper h2 {
+    font-size: 30px;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+  }
+  
+  .empty-list {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    justify-items: center;
+  }
+  
+  .listing-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+  
+  .listing-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .listing-card h4 {
+    margin: 0;
+    color: #2563eb;
+    font-size: 18px;
+  }
+  
+  .listing-card p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+  }
+  .listing-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  
+  .listing-actions button {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .buy-btn {
+    background-color: #22c55e;
+    color: white;
+  }
+  
+  .buy-btn:hover {
+    background-color: #16a34a;
+  }
+  
+  .favorite-btn {
+    background-color: #f87171;
+    color: white;
+  }
+  
+  .favorite-btn:hover {
+    background-color: #ef4444;
+  }
+  
+  .flag-btn {
+    background-color: #f97316;
+    color: white;
+  }
+  
+  .flag-btn:hover {
+    background-color: #fcfcfc;
+  }
+  
+  .toggle-btn {
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #2563eb;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  background: #f87171;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  margin-top: 8px;
+  background: #e5e7eb;
+  padding: 8px;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sidebar-subtitle {
+  font-size: 16px;
+  margin: 16px 0 8px;
+  color: #1e40af;
+  font-weight: bold;
+  text-align: left;
+}
+.back-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ===== Orders ===== */
+.orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.orders-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.order-card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+/* ===== Cart ===== */
+.map-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.map-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+.pickup-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pickup-buttons button {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.pickup-buttons button:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+/* ===== Dashboard ===== */
+.dashboard-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chart-box {
+  flex: 1 1 400px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.dashboard-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-filters input,
+.dashboard-filters button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.dashboard-filters button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.chart-box {
+  flex: 1 1 400px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.chart-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+.chart-box h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.earnings-summary {
+  flex: 1 1 100%;
+  background: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+}
+
+.earnings-summary h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.earnings-summary p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.earnings-summary p span {
+  font-weight: bold;
+}
+
+.earnings-summary .net-amount {
+  font-size: 1.5rem;
+  color: #1d4ed8;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.earnings-summary button {
+  margin-top: 1rem;
+  background: #1d4ed8;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.earnings-summary button:hover {
+  background: #1e40af;
+}
+/* ===== Contact US ===== */
+.message-center {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f8f9ff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.sent, .received {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #daf1ff;
+  color: #333;
+}
+
+.received {
+  align-self: flex-start;
+  background-color: #eaeaea;
+  color: #333;
+}
+
+.message-center input {
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-center button {
+  padding: 10px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.message-center button:hover {
+  background-color: #3730a3;
+}
+.message-inbox-container {
+  display: flex;
+  gap: 20px;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.inbox-sidebar {
+  width: 200px;
+  border-right: 1px solid #ddd;
+  padding-right: 1rem;
+}
+
+.inbox-sidebar h3 {
+  margin-bottom: 1rem;
+}
+
+.inbox-sidebar button {
+  display: block;
+  width: 100%;
+  background: #f1f1f1;
+  border: none;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.inbox-sidebar .active-chat {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.inbox-chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.chat-input-area button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== Subscriptions ===== */
+.page-wrapper {
+  padding: 60px 20px;
+  background: #f4f7fa;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.plan-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.plan-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #0a7;
+  margin: 10px 0 20px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.plan-card li {
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+.subscribe-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #1a237e;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.subscribe-btn:hover {
+  background: #3949ab;
+}
+.subscription-card {
+  background: white;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  max-width: 400px;
+  text-align: center;
+}
+
+.cancel-btn {
+  margin-top: 20px;
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #b71c1c;
+}
+.subscription-card {
+  background: white;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  max-width: 400px;
+  text-align: left;
+}
+
+.subscription-card h3 {
+  margin-bottom: 10px;
+}
+
+.subscription-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.cancel-btn {
+  margin-top: 20px;
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* ===== Profile ===== */
+.profile-wrapper {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.profile-form h4 {
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-image-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #ddd;
+}
+
+.profile-placeholder {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: inline-block;
+  color: #999;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3730a3;
+}
+/* FAQ  */
+
+.faq-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.faq-wrapper h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+.faq-section {
+  margin-bottom: 2rem;
+}
+
+.faq-section h3 {
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #2b2b2b;
+}
+
+.faq-section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.faq-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.faq-section a:hover {
+  text-decoration: underline;
+}
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.item-card {
+  padding: 20px;
+  background-color: #f9fafb;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.item-card:hover {
+  background-color: #f0fdf4; 
+}
+
+.item-card.selected {
+  border-color: #22c55e;
+  background-color: #dcfce7;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+  font-weight: bold;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.user-main {
+  min-height: calc(100vh - 100px); 
+  padding-bottom: 2rem;
+}
+
+.page-wrapper {
+  padding: 2rem;
+}
